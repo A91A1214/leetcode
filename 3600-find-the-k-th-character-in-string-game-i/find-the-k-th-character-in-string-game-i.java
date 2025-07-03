@@ -1,5 +1,6 @@
 class Solution {
     public char kthCharacter(int k) {
+        // char
         StringBuilder sb=new StringBuilder("a");
         // int s=sb.length();
         while(sb.length()<k){
