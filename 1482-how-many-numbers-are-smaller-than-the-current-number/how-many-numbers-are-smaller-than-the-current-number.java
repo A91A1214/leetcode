@@ -1,20 +1,18 @@
 class Solution {
     public int[] smallerNumbersThanCurrent(int[] nums) {
-        int[] buck = new int[101];
-        
-        for(int i=0; i<nums.length; i++) {
-            buck[nums[i]] +=1;
+        int n=nums.length;
+        int[] m=new int[n];
+        for(int i=0;i<n;i++){
+             int c=0;
+            int current=nums[i];
+            for(int j=0;j<n;j++){
+                if(nums[j]<current){
+                    c++;
+                  
+                }
+            }
+              m[i]=c;
         }
-        
-        for(int j=1; j<= 100; j++) {
-            buck[j] += buck[j-1];
+        return m;
         }
-        
-        for(int k=0; k< nums.length; k++) {
-            int pos = nums[k];
-            nums[k] = pos==0 ? 0 : buck[pos-1];
-        }
-        
-        return nums;
-    }
 }
